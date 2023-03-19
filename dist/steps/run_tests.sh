@@ -71,7 +71,7 @@ for platform in ${TEST_PLATFORMS//;/ }; do
     runTests="-quit"
   fi
 
-  unity-editor \
+  xvfb-run --auto-servernum --server-args='-screen 0 1280x720x24' unity-editor \
     -batchmode \
     -logFile "$FULL_ARTIFACTS_PATH/$platform.log" \
     -projectPath "$UNITY_PROJECT_PATH" \
